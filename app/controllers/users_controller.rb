@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     user = User.new(user_params)
@@ -8,8 +7,8 @@ class UsersController < ApplicationController
     if user.save
       redirect_to "/users/#{user.id}"
     else
-      flash[:alert] = user.errors.full_messages.join("")
-      
+      flash[:alert] = user.errors.full_messages.join('')
+
       redirect_to '/register'
     end
   end
@@ -23,5 +22,4 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:name, :email)
   end
-
 end

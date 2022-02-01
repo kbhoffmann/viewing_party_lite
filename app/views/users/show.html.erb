@@ -1,10 +1,25 @@
 <h1><%= @user.name %>'s Dashboard</h1>
 <%=button_to "Discover Movies", "users/#{@user.id}/discover", method: :get %>
-<h2>Parties This User is Invited to:</h2>
+
 <% @user.partys.each do |party| %>
-<ul>
-  <p>Date: <%= party.date.strftime('%m/%d/%Y') %></p>
-  <p>Duration: <%= party.duration %></p>
-  <p>Start Time: <%= party.start_time.strftime('%I:%M %p')%></p>
-</ul>
+
+  <% if party.host_id == @user.id %>
+  <div id="hosting">
+    <h2>Parties this user is hosting:</h2>
+      <ul>
+        <p>Date: <%= party.date.strftime('%m/%d/%Y') %></p>
+        <p>Duration: <%= party.duration %></p>
+        <p>Start Time: <%= party.start_time.strftime('%I:%M %p')%></p>
+      </ul>
+      </div>
+    <% else %>
+    <div id="invited">
+    <h2>Parties this user is invited to:</h2>
+      <ul>
+        <p>Date: <%= party.date.strftime('%m/%d/%Y') %></p>
+        <p>Duration: <%= party.duration %></p>
+        <p>Start Time: <%= party.start_time.strftime('%I:%M %p')%></p>
+      </ul>
+    </div>
+  <% end  %>
 <% end %>

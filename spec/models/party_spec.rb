@@ -8,8 +8,8 @@ RSpec.describe Party do
     it { should validate_presence_of :duration }
   end
 
-  describe "relationships" do
-    it {should have_many(:user_partys)}
-    it {should have_many(:users).through(:user_partys)}
+  describe 'relationships' do
+    it { should have_many(:user_partys) }
+    it { should have_many(:users).through(:user_partys) }
   end
 end
