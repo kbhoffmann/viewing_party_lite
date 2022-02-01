@@ -1,24 +1,23 @@
 require 'rails_helper'
-RSpec.describe "the welcome page" do
-  let!(:user_1) {User.create!(name: "George Washington", email: "george@csu.edu")}
-  let!(:user_2) {User.create!(name: "Abe Lincoln", email: "honestabe@csu.edu")}
+RSpec.describe 'the welcome page' do
+  let!(:user_1) { User.create!(name: 'George Washington', email: 'george@csu.edu') }
+  let!(:user_2) { User.create!(name: 'Abe Lincoln', email: 'honestabe@csu.edu') }
 
-
-  it "shows the title of the application" do
-    visit "/"
-    expect(page).to have_content("Viewing Party!")
+  it 'shows the title of the application' do
+    visit '/'
+    expect(page).to have_content('Viewing Party!')
   end
 
-  it "has a button to create a new user" do
-    visit "/"
-    expect(page).to have_button("Create a New User")
-    click_on "Create a New User"
-    expect(current_path).to eq("/register")
-    #will change to clicking a button
+  it 'has a button to create a new user' do
+    visit '/'
+    expect(page).to have_button('Create a New User')
+    click_on 'Create a New User'
+    expect(current_path).to eq('/register')
+    # will change to clicking a button
   end
 
-  it "shows all existing users and routes to their dashboard" do
-    visit "/"
+  it 'shows all existing users and routes to their dashboard' do
+    visit '/'
     expect(page).to have_link(user_1.name)
     expect(page).to have_link(user_1.email)
     expect(page).to have_link(user_2.name)
@@ -27,9 +26,9 @@ RSpec.describe "the welcome page" do
     expect(current_path).to eq("/users/#{user_1.id}")
   end
 
-  it "has a link to go back to the landing page" do
-    visit "/"
-    click_link("Welcome Page")
-    expect(current_path).to eq("/")
+  it 'has a link to go back to the landing page' do
+    visit '/'
+    click_link('Welcome Page')
+    expect(current_path).to eq('/')
   end
 end
