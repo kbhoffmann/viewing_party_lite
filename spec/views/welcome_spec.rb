@@ -12,19 +12,15 @@ RSpec.describe "the welcome page" do
   it "has a button to create a new user" do
     visit "/"
     expect(page).to have_button("Create a New User")
-    click_on "Create a New User"
-    expect(current_path).to eq("/register")
     #will change to clicking a button
   end
 
-  it "shows all existing users and routes to their dashboard" do
+  it "shows all existing users" do
     visit "/"
     expect(page).to have_link(user_1.name)
     expect(page).to have_link(user_1.email)
     expect(page).to have_link(user_2.name)
     expect(page).to have_link(user_2.email)
-    click_link(user_1.name)
-    expect(current_path).to eq("/users/#{user_1.id}")
   end
 
   it "has a link to go back to the landing page" do
