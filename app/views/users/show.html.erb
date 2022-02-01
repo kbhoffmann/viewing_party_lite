@@ -1,1 +1,10 @@
 <h1><%= @user.name %>'s Dashboard</h1>
+<%=button_to "Discover Movies", "users/#{@user.id}/discover", method: :get %>
+<h2>Parties This User is Invited to:</h2>
+<% @user.partys.each do |party| %>
+<ul>
+  <p>Date: <%= party.date.strftime('%m/%d/%Y') %></p>
+  <p>Duration: <%= party.duration %></p>
+  <p>Start Time: <%= party.start_time.strftime('%I:%M %p')%></p>
+</ul>
+<% end %>
