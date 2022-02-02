@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
   def index
-    parsed = MovieService.get_top_rated
-
+    @movies = MovieFacade.movies
   end
 end
