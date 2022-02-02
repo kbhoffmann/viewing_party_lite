@@ -16,8 +16,9 @@ RSpec.describe "Discover page" do
      expect(page).to have_content("8.8")
   end
 
-  it 'a form to find movies' do
+  it 'a form to find movies', :vcr do
      visit "/users/#{user_1.id}/discover"
-     expect(page).to have_button("Find Movies")
+     fill_in :title, with: "The Patriot"
+     click_button("Find Movies")
   end
 end

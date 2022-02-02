@@ -6,4 +6,10 @@ class MovieService
     parsed_2 = JSON.parse(response_2.body, symbolize_names: true)
     (parsed[:results] << parsed_2[:results]).flatten
   end
+
+  def self.movie_search(title)
+    response = Faraday.get("https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=#{title}&page=1")
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    parsed[:results]
+  end
 end

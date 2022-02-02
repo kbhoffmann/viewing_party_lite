@@ -7,4 +7,11 @@ RSpec.describe MovieFacade do
     expect(MovieFacade.movies.first.title).to eq("Your Eyes Tell")
     expect(MovieFacade.movies.first).to be_a(Movie)
   end
+
+  it "creates an array of searched movie objects", :vcr do
+    title = "The Patriot"
+    expect(MovieFacade.searched_movies(title)).to be_an(Array)
+    expect(MovieFacade.searched_movies(title).first.title).to eq("The Patriot")
+    expect(MovieFacade.searched_movies(title).first).to be_a(SearchMovie)
+  end
 end
