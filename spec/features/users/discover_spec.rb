@@ -10,7 +10,8 @@ RSpec.describe "Discover page" do
 
   it 'has a button to find top rated movies' do
      visit "/users/#{user_1.id}/discover"
-     expect(page).to have_button("Find Top Rated Movies")
+     click_button("Find Top Rated Movies")
+     expect(current_path).to eq("/users/#{user_1.id}/movies")
   end
 
   it 'a form to find movies' do
