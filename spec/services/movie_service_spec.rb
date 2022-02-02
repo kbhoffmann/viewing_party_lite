@@ -14,7 +14,12 @@ RSpec.describe MovieService do
       title = "The Patriot"
       expect(MovieService.movie_search(title)).to be_an(Array)
       expect(MovieService.movie_search(title).first[:original_title]).to eq("The Patriot")
-      # expect(MovieService.get_top_rated.all[:original_title]).to include?("The Patriot")
+    end
+
+    it "returns search result of 40 movies", :vcr do
+      title = "The"
+      expect(MovieService.movie_search(title)).to be_an(Array)
+      expect(MovieService.movie_search(title).length).to eq(40)
     end
   end
 end
