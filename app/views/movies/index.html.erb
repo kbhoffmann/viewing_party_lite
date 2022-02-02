@@ -4,3 +4,5 @@
   <p><%= movie.title %>, Rating:<%= movie.vote_average %></p>
 </ul>
 <% end %>
+
+<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get%>
