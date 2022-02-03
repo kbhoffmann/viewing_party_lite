@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/9/reviews?api_key=movie_api_key&language=en-US&page=1
+    uri: https://api.themoviedb.org/3/movie/9?api_key=movie_api_key&language=en-US
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 03 Feb 2022 20:31:48 GMT
+      - Thu, 03 Feb 2022 20:55:43 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -38,29 +38,31 @@ http_interactions:
       Cache-Control:
       - public, max-age=28800
       X-Memc:
-      - MISS, STORE
+      - HIT
       X-Memc-Key:
-      - 20ef6f3067fcd3cb5c381a7357294b593fb7e147
+      - 40ea7e6ce45357cbecb4a2154307dfbf27fab5ca
       X-Memc-Age:
-      - '0'
+      - '12710'
       X-Memc-Expires:
-      - '15713'
-      Last-Modified:
-      - '2018-12-13 20:54:13 +0000'
+      - '4386'
+      Etag:
+      - W/"2085d3d30aa545166cbf2f3dcb476ae1"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 23d87d8c2ce38e34462e6c134d187eea.cloudfront.net (CloudFront)
+      - 1.1 2ad801a60bd36fbeb6a62fab7eabe330.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - V-dnWIsPAtzLtsEktYxiGe0pjn6ssU_pibFOaVnIoAhJTVIJc20WMg==
+      - t1tQitMio49Ar51qhBZ2QS5E-3T_fzMVbk4GTOG1kEAdoOwBssitgA==
       Age:
-      - '845'
+      - '550'
     body:
       encoding: ASCII-8BIT
-      string: '{"id":9,"page":1,"results":[],"total_pages":0,"total_results":0}'
-  recorded_at: Thu, 03 Feb 2022 20:45:53 GMT
+      string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"}],"homepage":"","id":9,"imdb_id":"tt0425473","original_language":"de","original_title":"Sonntag
+        im August","overview":"","popularity":1.333,"poster_path":null,"production_companies":[],"production_countries":[{"iso_3166_1":"DE","name":"Germany"}],"release_date":"2004-09-02","revenue":0,"runtime":15,"spoken_languages":[{"english_name":"German","iso_639_1":"de","name":"Deutsch"}],"status":"Released","tagline":"","title":"Sunday
+        in August","video":false,"vote_average":7.1,"vote_count":12}'
+  recorded_at: Thu, 03 Feb 2022 21:04:53 GMT
 recorded_with: VCR 6.0.0

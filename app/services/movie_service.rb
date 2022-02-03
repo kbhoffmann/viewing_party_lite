@@ -29,18 +29,15 @@ class MovieService
     #might need to move these into poro?
   end
 
-  def self.movie_details(movie_id)
-    review_response = conn.get("/3/movie/#{movie_id}/reviews?api_key=#{ENV['movie_api_key']}&language=en-US&page=1")
-    parsed_review = JSON.parse(review_response.body, symbolize_names: true)
-    parsed_review[:results]
-    # where I left off
+  def self.movie_details_id(movie_id)
+    response = conn.get("/3/movie/#{movie_id}?api_key=#{ENV['movie_api_key']}&language=en-US")
+    parsed = JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.get_cast(movie_id)
     response = conn.get("/3/movie/#{movie_id}/credits?api_key=#{ENV['movie_api_key']}&language=en-US")
     parsed = JSON.parse(response.body, symbolize_names: true)
-    parsed[:cast]
-    #need just the first 10 cast memebers
+    parsed[:cast][0..9]
   end
 
   def self.get_reviews(movie_id)

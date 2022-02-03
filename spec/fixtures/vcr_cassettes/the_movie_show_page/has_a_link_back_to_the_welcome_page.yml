@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/1/reviews?api_key=movie_api_key&language=en-US&page=1
+    uri: https://api.themoviedb.org/3/movie/1?api_key=movie_api_key&language=en-US
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 03 Feb 2022 20:33:07 GMT
+      - Thu, 03 Feb 2022 21:01:07 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -40,26 +40,26 @@ http_interactions:
       X-Memc:
       - MISS
       X-Memc-Key:
-      - 49a61b5ef3efafa00001f91cd2284585d92bbf8c
+      - 5ef0f36e1049afbcf98468dc8b67d701f1298abf
       X-Memc-Age:
       - '0'
       X-Memc-Expires:
-      - '16975'
+      - '16923'
       Vary:
       - Accept-Encoding
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 ed8294655bb258e13bfb027c25483dda.cloudfront.net (CloudFront)
+      - 1.1 c4fb40b7909e4dd897bba2e297b284e6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - iIrGdZoI_2BGcwXVMfJxyO6HH8-FQzGeASvdDQ1ja-4UQiVjQL5GeA==
+      - kOAMYtw_ufpWcr2mNRr5m_67zXjV_-88EvCgI6BhD9IAHrT_jCbRsQ==
       Age:
-      - '758'
+      - '223'
     body:
       encoding: ASCII-8BIT
       string: '{"success":false,"status_code":34,"status_message":"The resource you
         requested could not be found."}'
-  recorded_at: Thu, 03 Feb 2022 20:45:45 GMT
+  recorded_at: Thu, 03 Feb 2022 21:04:50 GMT
 recorded_with: VCR 6.0.0

@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    movie = MovieService.movie_details(params[:movie_id])
+    movie = MovieService.movie_details_id(params[:movie_id])
     @movie = 'Big Trouble in Little China'
 
     # i think this will be an object that's a new poro,

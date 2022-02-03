@@ -25,18 +25,19 @@ RSpec.describe MovieService do
     it 'returns the details for a movie', :vcr do
       movie_id = 9
 
-      expect(MovieService.movie_details(movie_id)).to be_an(Array)
+      expect(MovieService.movie_details_id(movie_id)).to be_a(Hash)
     end
 
     it 'returns the cast members for a movie', :vcr do
       movie_id = 12
 
       expect(MovieService.get_cast(movie_id)).to be_an(Array)
+      expect(MovieService.get_cast(movie_id).length).to eq(10)
     end
 
     it 'returns the reviews for a movie', :vcr do
       movie_id = 33
-      
+
       expect(MovieService.get_reviews(movie_id)).to be_an(Array)
     end
   end
