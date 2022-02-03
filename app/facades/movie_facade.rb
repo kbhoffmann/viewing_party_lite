@@ -1,5 +1,4 @@
 class MovieFacade
-
   def self.movies
     results = MovieService.get_top_rated
     results.map do |result|

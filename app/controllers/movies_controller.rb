@@ -1,10 +1,16 @@
 class MoviesController < ApplicationController
   def index
     @user = User.find(params[:id])
-    if params[:title].present?
-      @movies = MovieFacade.searched_movies(params[:title])
-    else
-    @movies = MovieFacade.movies
-    end
+    @movies = if params[:title].present?
+                MovieFacade.searched_movies(params[:title])
+              else
+                MovieFacade.movies
+              end
+  end
+
+  def show
+    @movie = 'Big Trouble in Little China'
+    # i think this will be an object that's a new poro,
+    # a combo of the three api endpoints we need
   end
 end

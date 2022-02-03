@@ -12,7 +12,7 @@ class Movie
               :title,
               :vote_count,
               :vote_average
-              
+
   def initialize(result)
     @adult = result[:adult]
     @backdrop_path = result[:backdrop_path]
