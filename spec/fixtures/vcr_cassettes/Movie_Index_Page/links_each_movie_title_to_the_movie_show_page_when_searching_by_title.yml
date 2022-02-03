@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 03 Feb 2022 21:01:25 GMT
+      - Thu, 03 Feb 2022 21:39:27 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -40,15 +40,13 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 29f1da35ce271d2cdc88184ed0c1f86c.cloudfront.net (CloudFront)
+      - 1.1 dc50b0effd72a7b2c19bcb0909cfae82.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - yTzOPCAcpn0Vfxxo9dVOXOG12GHGv4QYsrFUIPNnnaskRjQDzgnO-A==
-      Age:
-      - '204'
+      - e8CePDQYzJKSNqtRmPfATF5dx-LyYQwpe-5UTrtbA4Yh5DMM8pFqKg==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/cTZ45PUZeuyToutVtkXIyQaDU6D.jpg","genre_ids":[28,12,35,14],"id":6978,"original_language":"en","original_title":"Big
@@ -59,7 +57,7 @@ http_interactions:
         Lo Pan and his three invincible cronies. Lo Pan must marry a girl with green
         eyes so he can regain his physical form.","popularity":21.681,"poster_path":"/vWtOXvlcXCpb74GGfqYAnSbnm0L.jpg","release_date":"1986-05-30","title":"Big
         Trouble in Little China","video":false,"vote_average":7.2,"vote_count":2215}],"total_pages":1,"total_results":1}'
-  recorded_at: Thu, 03 Feb 2022 21:04:49 GMT
+  recorded_at: Thu, 03 Feb 2022 21:39:27 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=movie_api_key&language=en-US&page=2&query=Big%20Trouble%20in%20Little%20China
@@ -85,7 +83,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 03 Feb 2022 21:01:25 GMT
+      - Thu, 03 Feb 2022 21:39:28 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -100,19 +98,17 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 23d87d8c2ce38e34462e6c134d187eea.cloudfront.net (CloudFront)
+      - 1.1 d29afc70fc2fdadee440493854714224.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - x-uNFkjGkdltgXTSKhx-66Etbo346bGgBuxkgE2382vKaR4ufm9YnQ==
-      Age:
-      - '205'
+      - _VsXSf6QjXfwqv9XdqO9MEQxOf-O8hxF1e7zrtKwk3q3gwr70E0OdA==
     body:
       encoding: ASCII-8BIT
       string: '{"page":2,"results":[],"total_pages":1,"total_results":1}'
-  recorded_at: Thu, 03 Feb 2022 21:04:49 GMT
+  recorded_at: Thu, 03 Feb 2022 21:39:28 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/6978?api_key=movie_api_key&language=en-US
@@ -165,16 +161,16 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 c4fb40b7909e4dd897bba2e297b284e6.cloudfront.net (CloudFront)
+      - 1.1 7d885ba806a1846198f8b666005bec92.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - ItZAux8rEpEWjxkGiUrCZC8Myizfe7-Fll_lj22RMqRFG1o_oO09gQ==
+      - ukLiDWDzMNYS9Xk6n9b1pHcsUWvpHf3YbVlF1NywX9zJclHVhiKTfg==
       Age:
-      - '205'
+      - '2283'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvY1RaNDVQVVpldXlUb3V0VnRrWEl5UWFEVTZELmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjoyNTAwMDAwMCwiZ2VucmVzIjpbeyJpZCI6MjgsIm5hbWUiOiJBY3Rpb24ifSx7ImlkIjoxMiwibmFtZSI6IkFkdmVudHVyZSJ9LHsiaWQiOjM1LCJuYW1lIjoiQ29tZWR5In0seyJpZCI6MTQsIm5hbWUiOiJGYW50YXN5In1dLCJob21lcGFnZSI6Imh0dHA6Ly93d3cudGhlb2ZmaWNpYWxqb2huY2FycGVudGVyLmNvbS9iaWctdHJvdWJsZS1pbi1saXR0bGUtY2hpbmEvIiwiaWQiOjY5NzgsImltZGJfaWQiOiJ0dDAwOTA3MjgiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJCaWcgVHJvdWJsZSBpbiBMaXR0bGUgQ2hpbmEiLCJvdmVydmlldyI6IldoZW4gdHJ1Y2tlciBKYWNrIEJ1cnRvbiBhZ3JlZWQgdG8gdGFrZSBoaXMgZnJpZW5kLCBXYW5nIENoaSwgdG8gcGljayB1cCBoaXMgZmlhbmNlZSBhdCB0aGUgYWlycG9ydCwgaGUgbmV2ZXIgZXhwZWN0ZWQgdG8gZ2V0IGludm9sdmVkIGluIGEgc3VwZXJuYXR1cmFsIGJhdHRsZSBiZXR3ZWVuIGdvb2QgYW5kIGV2aWwuIFdhbmcncyBmaWFuY2VlIGhhcyBlbWVyYWxkIGdyZWVuIGV5ZXMsIHdoaWNoIG1ha2UgaGVyIGEgcGVyZmVjdCB0YXJnZXQgZm9yIGltbW9ydGFsIHNvcmNlcmVyIExvIFBhbiBhbmQgaGlzIHRocmVlIGludmluY2libGUgY3Jvbmllcy4gTG8gUGFuIG11c3QgbWFycnkgYSBnaXJsIHdpdGggZ3JlZW4gZXllcyBzbyBoZSBjYW4gcmVnYWluIGhpcyBwaHlzaWNhbCBmb3JtLiIsInBvcHVsYXJpdHkiOjIxLjY4MSwicG9zdGVyX3BhdGgiOiIvdld0T1h2bGNYQ3BiNzRHR2ZxWUFuU2JubTBMLmpwZyIsInByb2R1Y3Rpb25fY29tcGFuaWVzIjpbeyJpZCI6OTY1LCJsb2dvX3BhdGgiOm51bGwsIm5hbWUiOiJUQUZUIEVudGVydGFpbm1lbnQgUGljdHVyZXMiLCJvcmlnaW5fY291bnRyeSI6IiJ9LHsiaWQiOjI1LCJsb2dvX3BhdGgiOiIvcVpDYzFsdHk1RnpYMzBhT0NWUkJMemFWbWNwLnBuZyIsIm5hbWUiOiIyMHRoIENlbnR1cnkgRm94Iiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJVUyIsIm5hbWUiOiJVbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2EifV0sInJlbGVhc2VfZGF0ZSI6IjE5ODYtMDUtMzAiLCJyZXZlbnVlIjoxMTAwMDAwMCwicnVudGltZSI6OTksInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkNhbnRvbmVzZSIsImlzb182MzlfMSI6ImNuIiwibmFtZSI6IuW5v+W3nuivnSAvIOW7o+W3nuipsSJ9LHsiZW5nbGlzaF9uYW1lIjoiRW5nbGlzaCIsImlzb182MzlfMSI6ImVuIiwibmFtZSI6IkVuZ2xpc2gifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IkFkdmVudHVyZSBkb2Vzbid0IGNvbWUgYW55IGJpZ2dlciEiLCJ0aXRsZSI6IkJpZyBUcm91YmxlIGluIExpdHRsZSBDaGluYSIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo3LjIsInZvdGVfY291bnQiOjIyMTZ9
-  recorded_at: Thu, 03 Feb 2022 21:04:50 GMT
+  recorded_at: Thu, 03 Feb 2022 21:39:28 GMT
 recorded_with: VCR 6.0.0

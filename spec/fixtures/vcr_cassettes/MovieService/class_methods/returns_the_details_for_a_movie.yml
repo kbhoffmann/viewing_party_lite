@@ -52,17 +52,17 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 2ad801a60bd36fbeb6a62fab7eabe330.cloudfront.net (CloudFront)
+      - 1.1 2c861897aa9389c1f47299b6fea5b59c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - t1tQitMio49Ar51qhBZ2QS5E-3T_fzMVbk4GTOG1kEAdoOwBssitgA==
+      - wbodD5I8g9YPNncacUceYSCKheXSSZ6pjuGKX8zybQ_wv99vgxZ7Eg==
       Age:
-      - '550'
+      - '2630'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"}],"homepage":"","id":9,"imdb_id":"tt0425473","original_language":"de","original_title":"Sonntag
         im August","overview":"","popularity":1.333,"poster_path":null,"production_companies":[],"production_countries":[{"iso_3166_1":"DE","name":"Germany"}],"release_date":"2004-09-02","revenue":0,"runtime":15,"spoken_languages":[{"english_name":"German","iso_639_1":"de","name":"Deutsch"}],"status":"Released","tagline":"","title":"Sunday
         in August","video":false,"vote_average":7.1,"vote_count":12}'
-  recorded_at: Thu, 03 Feb 2022 21:04:53 GMT
+  recorded_at: Thu, 03 Feb 2022 21:39:33 GMT
 recorded_with: VCR 6.0.0
