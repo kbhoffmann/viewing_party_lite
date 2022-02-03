@@ -9,10 +9,6 @@ class MoviesController < ApplicationController
   end
 
   def show
-    movie = MovieService.movie_details_id(params[:movie_id])
-    @movie = 'Big Trouble in Little China'
-
-    # i think this will be an object that's a new poro,
-    # a combo of the three api endpoints we need
+    @movie = MovieFacade.movie_details_id(params[:movie_id])
   end
 end

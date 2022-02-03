@@ -15,7 +15,6 @@ RSpec.describe 'Movie Index Page' do
     visit "/users/#{user_1.id}/movies"
     click_link 'The Shawshank Redemption'
     expect(current_path).to eq("/users/#{user_1.id}/movies/278")
-    # obviously must be made dynamic
   end
 
   it 'links each movie title to the movie show page when searching by title', :vcr do
@@ -23,6 +22,5 @@ RSpec.describe 'Movie Index Page' do
     visit "/users/#{user_1.id}/movies?title=#{title}"
     click_link('Big Trouble in Little China')
     expect(page).to have_content('Big Trouble in Little China')
-    # obviously must be made dynamic
   end
 end
