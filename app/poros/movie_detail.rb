@@ -13,7 +13,7 @@ class MovieDetail
     @id = movie_details[:id]
     @title = movie_details[:title]
     @runtime = (movie_details[:runtime].to_f / 60).round(2)
-    @genres = movie_details[:genres][0][:name]
+    @genres = all_genres(movie_details)
     @summary = movie_details[:overview]
     @vote_average = movie_details[:vote_average]
     @cast = format_cast(movie_cast)
@@ -35,5 +35,11 @@ class MovieDetail
       review_hash[review[:author]] = review[:content]
     end
     review_hash
+  end
+
+  def all_genres(movie_details)
+    movie_details[:genres].map do |genre|
+      genre[:name]
+    end
   end
 end
