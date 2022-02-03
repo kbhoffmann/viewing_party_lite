@@ -13,8 +13,8 @@ RSpec.describe 'Movie Index Page' do
 
   it 'links to each movie show page when sorted by top 40', :vcr do
     visit "/users/#{user_1.id}/movies"
-    click_link 'Your Eyes Tell'
-    expect(current_path).to eq("/users/#{user_1.id}/movies/730154")
+    click_link 'The Shawshank Redemption'
+    expect(current_path).to eq("/users/#{user_1.id}/movies/278")
     # obviously must be made dynamic
   end
 
