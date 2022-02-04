@@ -1,0 +1,19 @@
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new?runtime=#{@movie.runtime}", method: :post, local: true do |form| %>
+  <%= form.label :duration %>
+  <%= form.text_field :duration,placeholder: "#{@movie.runtime}"%>
+  <%= form.label :date%>
+  <%= form.text_field :date, placeholder: "d-mm-yyyy" %>
+  <%= form.label :start_time%>
+  <%= form.text_field :start_time , placeholder: "hr:mn"%>
+  <p>Invite Users:</p>
+  <% @users.each do |user|%>
+  <div id="user-<%= user.id %>" >
+    <ul>
+      <p><%= check_box_tag "users[]", user.id%>
+      <%= label_tag(:user, "#{user.name}(#{user.email})") %></p>
+    </ul>
+    <hr>
+  </div>
+  <% end %>
+  <%= form.submit "Create Party"%>
+<% end %>
