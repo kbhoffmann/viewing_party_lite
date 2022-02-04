@@ -7,7 +7,8 @@ class MovieDetail
               :vote_average,
               :cast,
               :reviews,
-              :review_count
+              :review_count,
+              :poster_path
 
   def initialize(movie_details, movie_cast, movie_reviews)
     @id = movie_details[:id]
@@ -19,6 +20,7 @@ class MovieDetail
     @cast = format_cast(movie_cast)
     @reviews = format_reviews(movie_reviews)
     @review_count = movie_reviews.count
+    @poster_path = movie_details[:poster_path]
   end
 
   def format_cast(movie_cast)

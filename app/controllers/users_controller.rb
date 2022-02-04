@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
     if user.save
       redirect_to "/users/#{user.id}"
+      flash[:alert] = "Welcome #{user.name}! Your account has successfully been created!"
     else
       flash[:alert] = user.errors.full_messages.join('')
 
@@ -15,6 +16,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+      if @user.partys.length > 0
+        @user.partys.each do |party|
+          @movie = MovieFacade.movie_details_id(party.movie_id)
+          if party.host_id != nil
+          @host = User.find(party.host_id)
+        end
+      end
+    end
   end
 
   def discover

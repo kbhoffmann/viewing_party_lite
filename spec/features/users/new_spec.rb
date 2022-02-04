@@ -11,6 +11,17 @@ RSpec.describe 'New User Form' do
     expect(page).to have_content("#{last_user.name}'s Dashboard")
   end
 
+  it 'shows a welcome/success message on the when user registration successful' do
+    user_1 = User.create!(name: 'Mike', email: 'mikey26@gmail.com')
+    visit '/register'
+    fill_in 'Name', with: 'Mike'
+    fill_in 'Email', with: 'mikey@gmail.com'
+    click_button 'Submit'
+    new_user = User.last
+    expect(current_path).to eq("/users/#{new_user.id}")
+    expect(page).to have_content("Welcome #{new_user.name}! Your account has successfully been created!")
+  end
+
   it 'wont create a user with a duplicate email' do
     user_1 = User.create!(name: 'Bob', email: 'bobbybob@gmail.com')
     visit '/register'
