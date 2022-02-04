@@ -73,7 +73,7 @@ Shoulda::Matchers.configure do |config|
   end
 end
 VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
   config.filter_sensitive_data('movie_api_key') { ENV['movie_api_key'] }
   config.configure_rspec_metadata!
