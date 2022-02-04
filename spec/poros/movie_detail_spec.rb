@@ -21,8 +21,7 @@ RSpec.describe MovieDetail do
     expect(movie).to be_a MovieDetail
     expect(movie.id).to eq(27)
     expect(movie.title).to eq("A Movie")
-    #expect(movie.runtime).to eq(115)
-    #calculates to 1.92
+    expect(movie.runtime).to eq(1.92)
     expect(movie.genres).to be_an(Array)
     expect(movie.genres.length).to eq(2)
     expect(movie.summary).to eq("Hilarous comedy about a guy")
