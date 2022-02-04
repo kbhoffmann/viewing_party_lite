@@ -1,11 +1,10 @@
 class MovieService
-
   def self.get_url(url)
     Faraday.new(url)
   end
 
   def self.conn
-    get_url(url: "https://api.themoviedb.org")
+    get_url(url: 'https://api.themoviedb.org')
   end
 
   def self.get_top_rated
@@ -26,7 +25,7 @@ class MovieService
     parsed_2 = JSON.parse(response_2.body, symbolize_names: true)
 
     (parsed[:results] << parsed_2[:results]).flatten
-    #might need to move these into poro?
+    # might need to move these into poro?
   end
 
   def self.movie_details_id(movie_id)
@@ -45,7 +44,7 @@ class MovieService
     # response_2 = conn.get("/3/movie/#{movie_id}/reviews?api_key=#{ENV['movie_api_key']}&language=en-US&page=2")
     parsed = JSON.parse(response.body, symbolize_names: true)
     # parsed_2 = JSON.parse(response_2.body, symbolize_names: true)
-    parsed[:results] #<< parsed_2[:results]).flatten
-    #need count of total reviews and review's author info
+    parsed[:results] # << parsed_2[:results]).flatten
+    # need count of total reviews and review's author info
   end
 end

@@ -1,13 +1,13 @@
 class MovieDetail
-    attr_reader :id,
-                :title,
-                :runtime,
-                :genres,
-                :summary,
-                :vote_average,
-                :cast,
-                :reviews,
-                :review_count
+  attr_reader :id,
+              :title,
+              :runtime,
+              :genres,
+              :summary,
+              :vote_average,
+              :cast,
+              :reviews,
+              :review_count
 
   def initialize(movie_details, movie_cast, movie_reviews)
     @id = movie_details[:id]
@@ -22,7 +22,7 @@ class MovieDetail
   end
 
   def format_cast(movie_cast)
-    cast_hash = Hash.new
+    cast_hash = {}
     movie_cast.each do |actor|
       cast_hash[actor[:name]] = actor[:character]
     end
@@ -30,7 +30,7 @@ class MovieDetail
   end
 
   def format_reviews(movie_reviews)
-    review_hash = Hash.new
+    review_hash = {}
     movie_reviews.each do |review|
       review_hash[review[:author]] = review[:content]
     end

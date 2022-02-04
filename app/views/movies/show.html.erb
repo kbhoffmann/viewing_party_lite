@@ -1,6 +1,6 @@
 <h1><%= @movie.title %></h1>
 
-<%=button_to "Create Viewing Party for #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get %>
+<%=button_to "Create Viewing Party for #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get, params: { runtime: @movie.runtime, title: @movie.title} %>
 
 <h5><%=@movie.summary%></h5>
 
