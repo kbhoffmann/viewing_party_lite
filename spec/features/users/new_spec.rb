@@ -5,7 +5,10 @@ RSpec.describe 'New User Form' do
     visit '/register'
     fill_in 'Name', with: 'Bob'
     fill_in 'Email', with: 'bobbybob@gmail.com'
+    fill_in 'Password', with: 'pw123'
+    fill_in "Password Confirmation", with: 'pw123'
     click_button 'Submit'
+
     last_user = User.all.last
     expect(current_path).to eq("/users/#{last_user.id}")
     expect(page).to have_content("#{last_user.name}'s Dashboard")
