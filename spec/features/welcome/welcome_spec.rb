@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe 'the welcome page' do
-  let!(:user_1) { User.create!(name: 'George Washington', email: 'george@csu.edu') }
-  let!(:user_2) { User.create!(name: 'Abe Lincoln', email: 'honestabe@csu.edu') }
+  let!(:user_1) { User.create!(name: 'George Washington', email: 'george@csu.edu', password: "1234") }
+  let!(:user_2) { User.create!(name: 'Abe Lincoln', email: 'honestabe@csu.edu', password: "1234") }
 
   it 'shows the title of the application' do
     visit '/'

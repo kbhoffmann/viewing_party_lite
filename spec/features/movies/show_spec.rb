@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.describe 'the movie show page' do
-  let!(:user_1) { User.create!(name: 'George Washington', email: 'george@csu.edu') }
+  let!(:user_1) { User.create!(name: 'George Washington', email: 'george@csu.edu', password: "1234") }
 
   it 'has a link back to the welcome page', :vcr do
     visit "/users/#{user_1.id}/movies/33"

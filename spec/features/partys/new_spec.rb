@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe 'the new party page' do
-  let!(:user_1) { User.create!(name: 'George Washington', email: 'george@csu.edu') }
-  let!(:user_2) { User.create!(name: 'Billy Bo', email: 'bill@csu.edu') }
+  let!(:user_1) { User.create!(name: 'George Washington', email: 'george@csu.edu', password: "1234") }
+  let!(:user_2) { User.create!(name: 'Billy Bo', email: 'bill@csu.edu', password: "1234") }
 
   it 'has a form to create a new party', :vcr do
     movie_id = 33

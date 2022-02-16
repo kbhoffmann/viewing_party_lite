@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.describe 'the user show(dashboard) page' do
-  let!(:user_1) { User.create!(name: 'George Washington', email: 'george@csu.edu') }
+  let!(:user_1) { User.create!(name: 'George Washington', email: 'george@csu.edu', password: "1234") }
   let!(:party_1) do
     Party.create!(movie_id: 33, date: Time.new(2022, 2, 1), duration: 120, start_time: Time.new(2022, 2, 1, 10, 30, 2))
   end

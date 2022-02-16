@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Discover page' do
-  let!(:user_1) { User.create!(name: 'George Washington', email: 'george@csu.edu') }
+  let!(:user_1) { User.create!(name: 'George Washington', email: 'george@csu.edu', password: "1234") }
 
   it 'has a title called discover movies' do
     visit "/users/#{user_1.id}/discover"
