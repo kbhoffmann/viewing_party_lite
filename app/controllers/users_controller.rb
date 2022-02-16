@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
       flash[:alert] = "Welcome #{user.name}! Your account has successfully been created!"
     else
-      flash[:alert] = user.errors.full_messages.join('')
+      flash[:alert] = user.errors.full_messages.to_sentence
 
       redirect_to '/register'
     end

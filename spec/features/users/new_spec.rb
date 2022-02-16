@@ -38,4 +38,36 @@ RSpec.describe 'New User Form' do
     expect(page).to have_content('Email has already been taken')
     expect(User.all.count).to eq(1)
   end
+
+  it 'wont create a user without a name' do
+    user_1 = User.create!(name: 'User', email: 'user@gmail.com', password: "test123", password_digest: "test123")
+
+    visit '/register'
+
+    fill_in 'Name', with: ""
+    fill_in 'Email', with: 'bobbybob@gmail.com'
+    fill_in 'Password', with: 'pw123'
+    fill_in "Password Confirmation", with: 'pw123'
+    click_button 'Submit'
+
+    expect(current_path).to eq('/register')
+    expect(page).to have_content("Name can't be blank")
+    expect(User.all.count).to eq(1)
+  end
+
+  it 'wont create a user without a matching password confirmation' do
+    user_1 = User.create!(name: 'User', email: 'user@gmail.com', password: "test123", password_digest: "test123")
+
+    visit '/register'
+
+    fill_in 'Name', with: 'Bob'
+    fill_in 'Email', with: 'bobbybob@gmail.com'
+    fill_in 'Password', with: 'pw123'
+    fill_in "Password Confirmation", with: 'PW123'
+    click_button 'Submit'
+
+    expect(current_path).to eq('/register')
+    expect(page).to have_content("Password confirmation doesn't match Password")
+    expect(User.all.count).to eq(1)
+  end
 end
