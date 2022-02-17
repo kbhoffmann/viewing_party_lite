@@ -1,6 +1,23 @@
 class UsersController < ApplicationController
   def new; end
 
+  def login_form; end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user
+      if user.authenticate(params[:password])
+        redirect_to "/users/#{user.id}"
+      else
+        redirect_to "/login"
+        flash[:alert] = "Password is invalid, try again"
+      end
+    else
+      redirect_to "/login"
+      flash[:alert] = "Unable to find a user with that password"
+    end
+  end
+
   def create
     user = User.new(user_params)
 
@@ -8,7 +25,7 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
       flash[:alert] = "Welcome #{user.name}! Your account has successfully been created!"
     else
-      flash[:alert] = user.errors.full_messages.join('')
+      flash[:alert] = user.errors.full_messages.to_sentence
 
       redirect_to '/register'
     end
@@ -33,6 +50,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :email)
+    params.permit(:name, :email, :password, :password_confirmation)
   end
+
 end
