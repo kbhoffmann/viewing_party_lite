@@ -1,21 +1,17 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome#index'
 
-  # get '/login', to: 'login#index'
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user'
 
   get '/register', to: 'users#new'
 
-  get '/users/:id', to: 'users#show'
+  get '/dashboard', to: 'users#show'
   post '/users', to: 'users#create'
 
-  get '/users/:id/discover', to: 'users#discover'
-  get '/users/:id/movies', to: 'movies#index'
-  get '/users/:id/movies/:movie_id', to: 'movies#show'
-  get '/users/:id/movies/:movie_id/viewing-party/new', to: 'partys#new'
-  post '/users/:id/movies/:movie_id/viewing-party/new', to: 'partys#create'
+  get '/discover', to: 'users#discover'
+  get '/movies', to: 'movies#index'
+  get '/movies/:movie_id', to: 'movies#show'
+  get '/movies/:movie_id/viewing-party/new', to: 'partys#new'
+  post '/movies/:movie_id/viewing-party/new', to: 'partys#create'
 end

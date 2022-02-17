@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   def login_user
     user = User.find_by(email: params[:email])
     if user
+      #could just make if user && user.authenticate() with just one flash error.
       if user.authenticate(params[:password])
-        redirect_to "/users/#{user.id}"
+        session[:user_id] = user.id
+        redirect_to "/dashboard"
       else
         redirect_to "/login"
         flash[:alert] = "Password is invalid, try again"
@@ -22,7 +24,8 @@ class UsersController < ApplicationController
     user = User.new(user_params)
 
     if user.save
-      redirect_to "/users/#{user.id}"
+      session[:user_id] = user.id
+      redirect_to "/dashboard"
       flash[:alert] = "Welcome #{user.name}! Your account has successfully been created!"
     else
       flash[:alert] = user.errors.full_messages.to_sentence
@@ -32,7 +35,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
+
       if @user.partys.length > 0
         @user.partys.each do |party|
           @movie = MovieFacade.movie_details_id(party.movie_id)
@@ -44,7 +48,7 @@ class UsersController < ApplicationController
   end
 
   def discover
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   private

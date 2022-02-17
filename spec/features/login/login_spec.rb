@@ -10,7 +10,7 @@ RSpec.describe "Login Page" do
     fill_in "Password", with: 'pw123'
     click_on "Login"
 
-    expect(current_path).to eq("/users/#{kerri_user.id}")
+    expect(current_path).to eq("/dashboard")
   end
 
   it 'directs a user back to the login page if a non-existant email is entered and flashes a message' do
