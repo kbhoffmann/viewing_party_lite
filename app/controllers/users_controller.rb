@@ -1,6 +1,18 @@
 class UsersController < ApplicationController
   def new; end
 
+  def login_form; end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+
+    if !user.nil?
+      if user.authenticate(params[:password])
+        redirect_to "/users/#{user.id}"
+      end
+    end
+  end
+
   def create
     user = User.new(user_params)
 
