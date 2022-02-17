@@ -30,12 +30,11 @@ RSpec.describe 'the welcome page' do
     expect(current_path).to eq('/')
   end
 
+  it 'links to the login page' do
+    visit '/'
 
-    it 'links to the login page' do
-      visit '/'
+    click_link "Log In"
 
-      click_link "Log In"
-
-      expect(current_path).to eq('/login')
-    end
+    expect(current_path).to eq('/login')
+  end
 end

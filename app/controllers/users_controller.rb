@@ -5,11 +5,16 @@ class UsersController < ApplicationController
 
   def login_user
     user = User.find_by(email: params[:email])
-
-    if !user.nil?
+    if user
       if user.authenticate(params[:password])
         redirect_to "/users/#{user.id}"
+      else
+        redirect_to "/login"
+        flash[:alert] = "Password is invalid, try again"
       end
+    else
+      redirect_to "/login"
+      flash[:alert] = "Unable to find a user with that password"
     end
   end
 
@@ -47,4 +52,5 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:name, :email, :password, :password_confirmation)
   end
+
 end
