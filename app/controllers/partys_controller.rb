@@ -1,9 +1,8 @@
 class PartysController < ApplicationController
   def new
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
     @users = User.all
     @movie = NewMovieParty.new(params[:movie_id], params[:title], params[:runtime])
-    # poro for the new form
   end
 
   def create
@@ -25,7 +24,7 @@ class PartysController < ApplicationController
       params[:users].each do |id|
         UserParty.create!(user_id: id, party_id: party.id)
       end
-      redirect_to "/users/#{params[:id]}"
+      redirect_to "/dashboard"
     end
   end
 end

@@ -4,8 +4,8 @@
   <h1>Top Rated Films:</h1>
 <% end %>
 
-<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get%>
+<%= button_to "Discover Page", "/discover", method: :get%>
 
 <% @movies.each do |movie| %>
-  <p><%=link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}"%>, Rating:<%= movie.vote_average %> </p>
+  <p><%=link_to "#{movie.title}", "/movies/#{movie.id}"%>, Rating:<%= movie.vote_average %> </p>
 <% end %>
