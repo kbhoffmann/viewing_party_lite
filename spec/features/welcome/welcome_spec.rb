@@ -15,14 +15,20 @@ RSpec.describe 'the welcome page' do
     expect(current_path).to eq('/register')
   end
 
-  xit 'shows all existing users and routes to their dashboard' do
+  it 'shows all existing users and routes to their dashboard' do
     visit '/'
-    
+
+    click_link "Log In"
+    fill_in :email, with: 'george@csu.edu'
+    fill_in :password, with: 'pw123'
+    click_on "Login"
+
+    visit '/'
+
     expect(page).to have_link(user_1.name)
     expect(page).to have_link(user_2.name)
     click_link(user_1.name)
     expect(current_path).to eq("/dashboard")
-    #need to change in controller that users are visible on '/' without being logged in
   end
 
   it 'has a link to go back to the landing page' do
@@ -45,7 +51,7 @@ RSpec.describe 'the welcome page' do
     visit '/'
     expect(page).to_not have_link("Log Out")
 
-    visit '/login'
+    click_link "Log In"
     fill_in :email, with: 'george@csu.edu'
     fill_in :password, with: 'pw123'
     click_on "Login"
