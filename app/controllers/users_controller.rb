@@ -51,6 +51,12 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
+  def logout_user
+    session.destroy
+
+    redirect_to '/'
+  end
+
   private
 
   def user_params
