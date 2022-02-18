@@ -35,6 +35,14 @@ end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.before(:each) do
+        visit '/'
+        click_link "Login!"
+        expect(current_path).to eq("/login")
+        fill_in :email, with: 'george@csu.edu'
+        fill_in :password, with: 'woodenteeth76'
+        click_button "Submit"
+  end
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

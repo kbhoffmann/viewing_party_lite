@@ -9,7 +9,7 @@ RSpec.describe 'New User Form' do
     fill_in 'Password confirmation', with: "normanthecat"
     click_button 'Submit'
     last_user = User.all.last
-    expect(current_path).to eq("/users/#{last_user.id}")
+    expect(current_path).to eq("/users/dashboard")
     expect(page).to have_content("#{last_user.name}'s Dashboard")
   end
 
@@ -22,7 +22,7 @@ RSpec.describe 'New User Form' do
     fill_in 'Password confirmation', with: "normanthecat"
     click_button 'Submit'
     new_user = User.last
-    expect(current_path).to eq("/users/#{new_user.id}")
+    expect(current_path).to eq("/users/dashboard")
     expect(page).to have_content("Welcome #{new_user.name}! Your account has successfully been created!")
   end
 
