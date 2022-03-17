@@ -7,3 +7,5 @@ class User < ApplicationRecord
   has_many :partys, through: :user_partys
   has_secure_password
 end
+
+##ok
