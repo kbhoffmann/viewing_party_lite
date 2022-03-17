@@ -10,10 +10,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'users#logout'
   post '/login', to: 'users#login_user'
 
-
   get '/users/dashboard', to: 'users#show'
-
-
 
   post '/users', to: 'users#create'
 
